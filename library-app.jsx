@@ -227,6 +227,14 @@ const LibraryApp = () => {
   const [adding, setAdding] = useState(false);
   const [detail, setDetail] = useState(null);   // {book, focusNote}
 
+  if (!lib.ready) {
+    return (
+      <div className="app"><div className="wrap" style={{ paddingTop: 120, textAlign: 'center', color: 'var(--faint)', fontFamily: 'var(--mono)', fontSize: 13 }}>
+        Chargement de ta bibliothèque…
+      </div></div>
+    );
+  }
+
   const reading  = lib.books.filter((b) => b.status === 'reading');
   const finished = lib.books.filter((b) => b.status === 'finished')
     .sort((a, b) => (b.finished || '').localeCompare(a.finished || ''));
