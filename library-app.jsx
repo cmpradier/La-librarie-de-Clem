@@ -314,7 +314,6 @@ const LibraryApp = () => {
 
         <footer className="foot">
           <span>Clem’s Library</span>
-          <button onClick={lib.resetAll}>Réinitialiser l'exemple</button>
         </footer>
       </main>
 
